@@ -1,0 +1,200 @@
+/*
+
+PushIn.js
+=========
+
+CSS document for working sample.
+
+PushIn.js is a plugin which can be attached to any
+div element to simulate a dolly-in or push-in effect.
+
+*/
+
+#scroller .nombre{
+	z-index: 1;
+	letter-spacing: 5px;
+	text-align: center;
+	color: rgb(27, 132, 198);
+	font-size: 7vw;
+	padding-top: 200px;
+	font-family: 'Mitr', sans-serif;
+	text-shadow: black 3px 3px 1px;
+}
+
+#scroller .nombre2{
+	z-index: 2;
+	letter-spacing: 9px;
+	text-align: center;
+	color: rgb(243, 231, 231);
+	font-size: 6.5vw;
+	padding-top: 210px;
+	padding-left: 80px;
+	opacity: .1;
+	font-family: 'Mitr', sans-serif;
+}
+
+
+/* CONSOLE FOR DEBUGING */
+
+header {
+	position: fixed;
+	top: 0;
+	height: 40px;
+	width: 100%;
+	text-align: center;
+	padding-top: 5px;
+	z-index: 9999;
+	background: black;
+}
+
+
+/* LAYOUT */
+
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 1000%;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	}
+
+#wrapper {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	display: block;
+	width: 100%;
+	overflow: auto;
+}
+
+#scroller, .layer {
+	display: block;
+	width: 100%;
+}
+
+#scroller {
+	
+	height: 100%;
+	background: url("https://images.unsplash.com/flagged/photo-1590611380015-4bddad295509?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+}
+
+.layer {
+	position: fixed;
+	text-align: center;
+	height: 100vh;
+	opacity: 1.0;
+}
+
+
+
+
+/* LAYER 1 STYLING */
+
+#layer1 {
+	transform:scale(.2, .5);
+}
+
+.dot {
+	z-index: 3;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 10%;            /* Effects height and width together */
+	margin: -20% 5%;
+	top: 50%;
+	border-radius: 50%;
+}
+
+/*
+	Pseudo-class keeps aspect ratio when resizing
+	http://www.mademyday.de/css-height-equals-width-with-pure-css.html
+*/
+.dot:before {
+	z-index: 0;
+	content: '';
+	display: inline-block;
+	padding-top: 100%;      /* 1:1 aspect ratio */
+}
+
+.content {
+	z-index: 3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding-top: 50%;
+}
+
+
+/* LAYER 2 STYLING */
+
+h4 { position: relative; }
+
+#layer2 h4,
+#layer3 h4 {
+	top: 50%;
+	margin-top: -.75em;
+}
+
+
+
+/* FUNCTIONAL */
+
+
+.layer {
+	transition: opacity 1000ms ease;
+}
+
+.hide {
+	width: 0px !important;
+	height: 0px !important;
+	color: transparent !important;
+	opacity: 0 !important;
+}
+
+
+
+/* COLORS */
+
+.yellow { background:transparent; }
+
+.green  { 
+	background: #0daaec; 
+}
+
+.blue { background: transparent; }
+
+
+.flecha{
+	position: absolute;
+	background-color: transparent;
+	bottom: 20px;
+	width: 100%;
+	height: 8%;
+}
+
+.boton-down{
+	
+	display:inline-block;
+	padding:20px;
+	background:transparent;
+	font-size:80px;
+	
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	top:80vh;
+	left:50vw;
+	
+}

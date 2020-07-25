@@ -1,0 +1,232 @@
+/*
+
+PushIn.js
+=========
+
+CSS document for working sample.
+
+PushIn.js is a plugin which can be attached to any
+div element to simulate a dolly-in or push-in effect.
+
+*/
+#scroller .nombre0{
+	z-index: 2;
+	letter-spacing: 10px;
+	text-align: start;
+	color: rgb(29, 23, 189);
+	font-size: 7vw;
+	
+	margin-left: 0;
+	font-family: 'Roboto', sans-serif;
+	/* text-shadow: rgb(241, 236, 236) 2px 2px 1px; */
+}
+
+#scroller .nombre{
+	z-index: 1;
+	letter-spacing: 10px;
+	text-align: center;
+	color: rgb(23, 189, 151);
+	font-size: 7vw;
+	padding-top: 20vh;
+	margin-right: 500px;
+	font-family: 'Roboto', sans-serif;
+	/* text-shadow: rgb(241, 236, 236) 2px 2px 1px; */
+}
+
+#scroller .nombre2{
+	z-index: 0;
+	letter-spacing: 5px;
+	text-align: center;
+	color: rgb(243, 231, 231);
+	font-size: 6.5vw;
+	padding-top: 25vh ;
+	padding-left: 3vw;
+	opacity: .1;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+/* CONSOLE FOR DEBUGING */
+
+header {
+	position: fixed;
+	top: 0;
+	height: 40px;
+	width: 100%;
+	text-align: center;
+	padding-top: 5px;
+	z-index: 9999;
+	background: black;
+}
+
+
+/* LAYOUT */
+
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 450%;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	}
+
+#wrapper {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	display: block;
+	width: 100%;
+	overflow: auto;
+}
+
+#scroller, .layer {
+	display: block;
+	width: 100%;
+}
+
+#scroller {
+	
+	height: 100%;
+	background-image: url("https://images.unsplash.com/photo-1468436139062-f60a71c5c892?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+	/* background: url("https://images.unsplash.com/flagged/photo-1590611380015-4bddad295509?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"); */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+}
+
+.layer {
+	position: fixed;
+	text-align: center;
+	height: 100vh;
+	opacity: 1.0;
+}
+
+
+
+
+/* LAYER 1 STYLING */
+
+#layer1 {
+	transform:scale(.2, .5);
+}
+
+.dot {
+	z-index: 3;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 10%;            /* Effects height and width together */
+	margin: -20% 5%;
+	top: 50%;
+	border-radius: 50%;
+}
+
+/*
+	Pseudo-class keeps aspect ratio when resizing
+	http://www.mademyday.de/css-height-equals-width-with-pure-css.html
+*/
+.dot:before {
+	z-index: 0;
+	content: '';
+	display: inline-block;
+	padding-top: 100%;      /* 1:1 aspect ratio */
+}
+
+.content {
+	z-index: 3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding-top: 50%;
+}
+
+
+/* LAYER 2 STYLING */
+
+h4 { position: relative; }
+
+#layer2 h4,
+#layer3 h4 {
+	top: 50%;
+	margin-top: -.75em;
+}
+
+
+
+/* FUNCTIONAL */
+
+
+.layer {
+	transition: opacity 1000ms ease;
+}
+
+.hide {
+	width: 0px !important;
+	height: 0px !important;
+	color: transparent !important;
+	opacity: 0 !important;
+}
+
+
+
+/* COLORS */
+
+.yellow { 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url("https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+}
+
+
+.green  { 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	background-image: url("https://images.unsplash.com/photo-1491472253230-a044054ca35f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1963&q=80");
+}
+
+.blue { 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url("https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+}
+
+
+.flecha{
+	position: absolute;
+	background-color: transparent;
+	bottom: 8vh;
+	width: 100%;
+	height: 5%;
+}
+
+.boton-down{
+	
+	/* display:inline-block;
+	padding:20px;
+	background:transparent;
+	font-size:5vw;
+	
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	top:80vh;
+	left:50vw; */
+	margin-bottom: 1em;
+	margin-left: 50%;
+	font-size: 5vh;
+	color: rgba(243, 231, 231,0.7);
+	
+}
