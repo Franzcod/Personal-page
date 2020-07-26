@@ -63,7 +63,7 @@ div element to simulate a dolly-in or push-in effect.
 	margin-top: 50vh;
 	margin-left: 3.5vw;
 	font-family: 'Roboto', sans-serif;
-	text-shadow: black 2px 2px;
+	/* text-shadow: black 2px 2px; */
 	
 }
 
@@ -91,7 +91,7 @@ html {
 }
 
 body {
-	height: 450%;
+	height: 750%;
 }
 
 * {
@@ -126,14 +126,12 @@ body {
 }
 
 .layer {
+	z-index: 4;
 	position: fixed;
 	text-align: center;
 	height: 100vh;
 	opacity: 1.0;
 }
-
-
-
 
 /* LAYER 1 STYLING */
 
@@ -157,14 +155,14 @@ body {
 	http://www.mademyday.de/css-height-equals-width-with-pure-css.html
 */
 .dot:before {
-	z-index: 0;
+	z-index: 4;
 	content: '';
 	display: inline-block;
 	padding-top: 100%;      /* 1:1 aspect ratio */
 }
 
 .content {
-	z-index: 3;
+	z-index: 4;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -220,15 +218,23 @@ h4 { position: relative; }
 	background-image: url("https://images.unsplash.com/photo-1491472253230-a044054ca35f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1963&q=80");
 }
 
-.blue { 
+.img4 { 
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-image: url("https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
 }
 
+.blue { 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url("https://images.unsplash.com/photo-1592959755315-6da7782551a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+}
+
 /* contenedor flecha */
 .flecha{
+	z-index: 3;
 	position: absolute;
 	background-color: transparent;
 	bottom: 8vh;
@@ -267,6 +273,78 @@ h4 { position: relative; }
   }
 
 .contact-links1 a:hover{
-	font-size: 4vw;
+	
+	text-shadow: rgb(97, 61, 6) 2px 2px;
+	
   
 }
+
+.projects-section {
+	padding-top: 7vw;
+	/* position: relative; */
+	margin: auto ;
+	width: 75%;
+	height: 100%;
+	border-radius: 3px;
+	text-align: center;
+	background-color: rgba(255, 254, 254, 0.1); 
+	/* border-bottom: 1px solid black ; */
+  }
+
+  .projects-grid {
+	display:grid;
+	grid-template-columns: 20vw 20vw 20vw;
+	grid-template-rows: 12vw 12vw;
+	justify-content: space-around;
+	width: 90%;
+	margin: auto;
+	margin-bottom: 10;
+	/*flex-wrap: wrap;*/
+  }
+
+  img {
+	display: block;
+	width: 90%;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+  }
+  
+  .project-image-QC{
+	width: 30vw;
+	height: 30vw;
+  }
+  .projects-section-header{
+	  color:white;
+	  font-size: 5vh;
+	  font-family: Arial, Helvetica, sans-serif;
+	  margin-bottom: 7vh;
+  }
+
+  .more{
+	margin-top: 100px;
+	color:black;
+	font-size: 3.5vh;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	text-shadow: rgb(231, 99, 99) 1px 1px;
+  }
+
+  @media (max-width: 75em){
+	  .more{
+		  font-size: 2.5vh;
+		  padding-top: 10vw;
+	  }
+	  .projects-section-header{
+		  font-size: 2.8vh;
+		  padding-top: 20vh;
+	  }
+	  .projects-grid {
+		display:grid;
+		grid-template-columns: 20vh 20vh;
+		grid-template-rows: 12vh 12vh 12vh;
+		justify-content: space-around;
+		width: 90%;
+		margin: auto;
+		margin-bottom: 10;
+		/*flex-wrap: wrap;*/
+	  }
+  }
