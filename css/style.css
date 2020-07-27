@@ -177,7 +177,8 @@ body {
 h4 { position: relative; }
 
 #layer2 h4,
-#layer3 h4 {
+#layer3 h4,
+#layer4 h4{
 	top: 50%;
 	margin-top: -.75em;
 }
